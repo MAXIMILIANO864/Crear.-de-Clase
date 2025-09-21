@@ -1,0 +1,16 @@
+from datetime import date
+class Coche:
+    def __init__(self, marca: str, modelo: str, año_fabricacion: int):
+        self.marca = marca
+        self.modelo = modelo
+        self.año_fabricacion = año_fabricacion
+    def obtener_antiguedad(self):
+        año_actual = date.today().year
+        return año_actual - self.año_fabricacion
+if __name__ == "__main__":
+    coche1 = Coche("Toyota", "Corolla", 2015)
+    print("Marca:", coche1.marca)
+    print("Modelo:", coche1.modelo)
+    print("Año de fabricación:", coche1.año_fabricacion)
+    print("Antigüedad del coche:", coche1.obtener_antiguedad(), "años")
+
