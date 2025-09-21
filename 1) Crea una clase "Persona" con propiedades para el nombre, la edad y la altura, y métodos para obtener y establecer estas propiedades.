@@ -1,0 +1,31 @@
+class Persona:
+    def __init__(self, nombre: str, edad: int, altura: float):
+        self._nombre = nombre
+        self._edad = edad
+        self._altura = altura
+    def get_nombre(self):
+        return self._nombre
+    def get_edad(self):
+        return self._edad
+    def get_altura(self):
+        return self._altura
+    def set_nombre(self, nuevo_nombre: str):
+        self._nombre = nuevo_nombre
+    def set_edad(self, nueva_edad: int):
+        if nueva_edad >= 0:
+            self._edad = nueva_edad
+    def set_altura(self, nueva_altura: float):
+        if nueva_altura > 0:
+            self._altura = nueva_altura
+if __name__ == "__main__":
+    persona = Persona("Rock", 18, 1.68)
+    print("Nombre:", persona.get_nombre())
+    print("Edad:", persona.get_edad())
+    print("Altura:", persona.get_altura())
+    persona.set_nombre("Rock")
+    persona.set_edad(30)
+    persona.set_altura(1.70)
+    print("\nDespués de actualizar:")
+    print("Nombre:", persona.get_nombre())
+    print("Edad:", persona.get_edad())
+    print("Altura:", persona.get_altura())
