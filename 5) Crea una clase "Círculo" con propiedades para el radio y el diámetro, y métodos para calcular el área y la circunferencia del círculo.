@@ -1,0 +1,16 @@
+import math
+class Circulo:
+    def __init__(self, radio: float):
+        if radio <= 0:
+            raise ValueError("El radio debe ser mayor que 0")
+        self.radio = radio
+        self.diametro = 2 * radio
+    def calcular_area(self):
+        return math.pi * (self.radio ** 2)
+    def calcular_circunferencia(self):
+        return 2 * math.pi * self.radio
+if __name__ == "__main__":
+    circulo = Circulo(5)
+    print(f"Radio: {circulo.radio}, Diámetro: {circulo.diametro}")
+    print("Área del círculo:", round(circulo.calcular_area(), 2))
+    print("Circunferencia del círculo:", round(circulo.calcular_circunferencia(), 2))
