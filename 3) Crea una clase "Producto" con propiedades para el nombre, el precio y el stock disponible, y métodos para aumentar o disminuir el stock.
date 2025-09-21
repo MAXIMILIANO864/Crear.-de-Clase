@@ -1,0 +1,21 @@
+class Producto:
+    def __init__(self, nombre: str, precio: float, stock: int):
+        self.nombre = nombre
+        self.precio = precio
+        self.stock = stock
+    def aumentar_stock(self, cantidad: int):
+        if cantidad > 0:
+            self.stock += cantidad
+            return f"Stock aumentado en {cantidad}. Stock actual: {self.stock}"
+        return "Cantidad inválida para aumentar stock."
+    def disminuir_stock(self, cantidad: int):
+        if 0 < cantidad <= self.stock:
+            self.stock -= cantidad
+            return f"Stock disminuido en {cantidad}. Stock actual: {self.stock}"
+        return f"No se puede disminuir {cantidad}. Stock disponible: {self.stock}"
+if __name__ == "__main__":
+    producto = Producto("Camisa", 25.0, 50)
+    print(f"Producto: {producto.nombre}, Precio: ${producto.precio}, Stock: {producto.stock}")
+    print(producto.aumentar_stock(20))
+    print(producto.disminuir_stock(30))
+    print(producto.disminuir_stock(50))
