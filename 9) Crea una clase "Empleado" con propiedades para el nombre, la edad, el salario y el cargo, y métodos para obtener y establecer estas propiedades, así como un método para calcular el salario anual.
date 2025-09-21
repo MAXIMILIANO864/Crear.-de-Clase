@@ -1,0 +1,40 @@
+class Empleado:
+    def __init__(self, nombre: str, edad: int, salario: float, cargo: str):
+        self._nombre = nombre
+        self._edad = edad
+        self._salario = salario
+        self._cargo = cargo
+    def get_nombre(self):
+        return self._nombre
+    def get_edad(self):
+        return self._edad
+    def get_salario(self):
+        return self._salario
+    def get_cargo(self):
+        return self._cargo
+    # Métodos SET
+    def set_nombre(self, nombre: str):
+        self._nombre = nombre
+    def set_edad(self, edad: int):
+        if edad >= 0:
+            self._edad = edad
+    def set_salario(self, salario: float):
+        if salario >= 0:
+            self._salario = salario
+    def set_cargo(self, cargo: str):
+        self._cargo = cargo
+    def calcular_salario_anual(self):
+        return self._salario * 12
+if __name__ == "__main__":
+    empleado = Empleado("Carlos", 30, 2500.0, "Desarrollador")
+    print("Nombre:", empleado.get_nombre())
+    print("Edad:", empleado.get_edad())
+    print("Cargo:", empleado.get_cargo())
+    print("Salario mensual:", empleado.get_salario())
+    print("Salario anual:", empleado.calcular_salario_anual())
+    empleado.set_salario(3000.0)
+    empleado.set_cargo("Senior Developer")
+    print("\nDespués de actualización:")
+    print("Nuevo salario mensual:", empleado.get_salario())
+    print("Nuevo salario anual:", empleado.calcular_salario_anual())
+    print("Nuevo cargo:", empleado.get_cargo())
