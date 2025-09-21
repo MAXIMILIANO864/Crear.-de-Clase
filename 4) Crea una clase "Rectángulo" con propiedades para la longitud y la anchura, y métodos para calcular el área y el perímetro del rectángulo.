@@ -1,0 +1,13 @@
+class Rectangulo:
+    def __init__(self, longitud: float, anchura: float):
+        self.longitud = longitud
+        self.anchura = anchura
+    def calcular_area(self):
+        return self.longitud * self.anchura
+    def calcular_perimetro(self):
+        return 2 * (self.longitud + self.anchura)
+if __name__ == "__main__":
+    rect = Rectangulo(5, 3)
+    print(f"Longitud: {rect.longitud}, Anchura: {rect.anchura}")
+    print("Área del rectángulo:", rect.calcular_area())
+    print("Perímetro del rectángulo:", rect.calcular_perimetro())
